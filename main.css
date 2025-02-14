@@ -1,0 +1,368 @@
+body {
+    background-color: #fce4ec;
+    /* overflow: hidden; /* Prevents scrollbars */
+    margin: 0; 
+
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #8a0d0d;
+}
+
+h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #c85662;
+}
+
+.section-title {
+    height: 10%;
+}
+  
+.container {
+    /* position: relative; */
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    text-align: center;
+}
+
+/* Text container that holds the letters */
+.text-container {
+    font-size: 3.5vw;
+    font-family: 'Dancing Script', cursive; /* Fun cursive font for Valentine's Day */
+    color: #b32121; /* Red color for the text */
+    display: inline-block;
+    white-space: nowrap;
+    height: 700px;
+}
+
+/* Individual letter styles */
+.letter {
+    display: inline-block;
+    transform: translateY(10px); /* Start position slightly below */
+    font-weight: bold;
+    height: 44%;
+    z-index: 1;
+}
+
+.letter-animated {
+    display: inline-block;
+    opacity: 0; /* Initially hide all letters */
+    transform: translateY(10px); /* Start position slightly below */
+    font-weight: bold;
+    animation: fadeInUp 0.5s forwards;
+    height: 50%;
+    z-index: 1;
+}
+  
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #e74c3c;
+    transform: rotate(-45deg);
+    opacity: 0.8;
+    animation: float linear infinite;
+    top: 650px;
+    z-index: -10;
+}
+
+/* Creating the rounded top of the heart */
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #e74c3c;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: 10px;
+}
+
+.row-of-cards {
+    padding: 0;
+    text-align: center;
+    /* position: relative; */
+    /* height: 35vw; */
+}
+
+.grid-of-cards {
+    height: 60vw;
+}
+
+.flip-card-container {
+    color: #f4b8b8;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    /* position: relative; */
+    width: 18vw;
+    height: 24vw;
+    perspective: 800px;
+    padding: 5px;
+}
+
+.flip-card-container:hover > .flip-card {
+    transform: translateY(-15%);
+    cursor: pointer;
+}
+
+.flip-card-container.fipped:hover > .flip-card {
+    transform: translateY(-15%) rotateY(180deg);
+    cursor: pointer;
+}
+
+.flip-card {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transition: transform 1200ms;
+    transform-style: preserve-3d;
+    z-index: 1;
+}
+
+/* .flip-card:hover {
+    transform: translateY(-15%);
+} */
+
+.flip-card.flipped {
+    transform: rotateY(180deg);
+}
+
+.flip-card.flipped:hover {
+    transform: rotateY(180deg) translateY(-15%);
+}
+
+.flip-card-front,
+.flip-card-back {
+    height: 100%;
+    width: 100%;
+    padding-top: 5%;
+    border-radius: 1.5rem;
+    box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+    position: absolute;
+    backface-visibility: hidden;
+    font-size: 1.5vw;
+}
+
+.flip-card-front {
+    /* background-image: url("images/cardTemplate.png");
+    background-size: 98%;
+    background-position: center; */
+    background-color: #dd7180;
+    padding: 2vw;
+}
+.flip-card-front h1 {
+    padding-top: 20%;
+    padding-bottom: 15%;
+    font-size: 2vw;
+    color: #f4b8b8;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.flip-card-back h1 {
+    padding-top: 5%;
+    /* padding-bottom: 15%; */
+    font-size: 2vw;
+    color: #f4b8b8;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.flip-card-back {
+    background-color: #b74151;
+    transform: rotateY(180deg);
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    /* padding-top: 1vw; */
+}
+
+.flip-card-picture {
+    height: 60%;
+}
+
+.when-i-see-you {
+    height: 600px;
+    width: 100%;
+    background-color: #f3b0c8;
+    /* position: relative; */
+    display: inline-block;
+    margin-bottom: 10%;
+    padding: 5%;
+    border: 20px solid transparent;
+    border-image-source: url('images/beatingHeart.gif');
+    border-image-slice: 30;
+    border-image-repeat: round;
+}
+
+.caricature-section {
+    /* max-width: 60%;
+    max-height: 90%; */
+    width: auto;
+    height: auto;
+    display: block;
+    margin: auto;
+    
+    /* height: 800px;
+    width: 100%; */
+    background-color: #f3b0c8;
+    /* position: relative; */
+    display: inline-block;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    padding: 5%;
+    border: 20px solid transparent;
+    border-image-source: url('images/beatingHeart.gif');
+    border-image-slice: 30;
+    border-image-repeat: round;
+}
+
+.beating-heart {
+    height: 8vw;
+    width: 10vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    /* transform: translateY(50%); */
+}
+
+.penguin {
+    padding: 0;
+    height: 70%;
+}
+
+.cat-image {
+    height: 90%;
+}
+
+.caricature {
+    max-width: 60%;
+    max-height: 90%;
+    width: auto;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+.hidden-container {
+    position: relative;
+    background-color: #f3b0c8;
+    height: 90%;
+}
+
+.hidden-container:hover {
+    cursor: pointer;
+}
+
+.hidden {
+    position: absolute;
+    bottom: 5%;
+    top: 0%;
+    left: 10%;
+    right: 10%;
+    background-color: #f081a2;
+    overflow: hidden;
+    height: 90%;
+    transition: height 5s ease, top 5s ease;
+}
+
+.hidden.revealed {
+    height: 0%;
+    bottom: 0%;
+    top: 100%;
+    left: 10%;
+    right: 10%;
+}
+
+.art-container {
+    position: relative;
+    width: 100%;
+}
+
+
+.art-overlay {
+    position: absolute;
+    bottom: 3%;
+    top: 3%;
+    left: 0;
+    right: 0;
+    background-color: #a37e3a;
+    overflow: hidden;
+    width: 0;
+    height: 94%;
+    transition: .5s ease;
+}
+
+.final-message {
+    height: 200px;
+    transform: translateY(50%);
+}
+  
+@keyframes float {
+    0% {
+        transform: translateY(0) scale(1) rotate(-45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) scale(2) rotate(-45deg);
+        opacity: 0;
+    }
+}
+
+/* @keyframes pop {
+    0% {
+        transform: scale(2) rotate(-45deg);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(3) rotate(-45deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(0) rotate(-45deg);
+        opacity: 0;
+    }
+} */
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Initially invisible */
+    }
+    100% {
+        opacity: 1; /* Fully visible after 10 seconds */
+    }
+}
+
+/* Keyframes to animate each letter */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0.2;
+        transform: translateY(0px);
+    }
+    50% {
+        opacity: 0.7;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(10px);
+    }
+}

@@ -1,0 +1,34 @@
+body {
+    background-color: #ffffff;
+    /* overflow: hidden; /* Prevents scrollbars */
+    margin: 0; 
+    text-align: center;
+
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.index-image {
+    position: relative;
+    height: 400px;
+}
+
+.header {
+    padding: 20px;
+}
+
+.buttons {
+    padding: 20px;
+}
+
+.button {
+    background-color: rgb(228, 228, 228);
+    margin: 10px;
+}
+
+.button:hover { 
+    background-color: rgb(185, 185, 185);
+}
